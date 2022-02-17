@@ -1,3 +1,3 @@
-import { PromilleCalculator } from "./mod";
+import { PromilleCalculator } from "./src/PromilleCalculator";
 
-console.log(PromilleCalculator.howDrunkAmI(81, 185, "m", 3, 100))
+console.log(PromilleCalculator.howDrunkAmI(81, 185, "m", 3, 100));
