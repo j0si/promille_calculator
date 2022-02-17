@@ -1,1 +1,1 @@
-export * from "./src/PromilleCalculator.ts"
+export * from "./src/PromilleCalculator"
