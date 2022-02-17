@@ -1,3 +1,5 @@
+type Sex = "f" | "m"
+
 export class PromilleCalculator {
     
     // Function to calculate the amount of pure alcohol in gramm, 
@@ -8,16 +10,18 @@ export class PromilleCalculator {
 
     // Reductionfactor r from Seidl et al.
     // bodyweight in kg, height in cm
-    public static getSeidlReductionFactor (bodyweight:number, height:number, sex:string) {
-        if (sex == "f")
+    public static getSeidlReductionFactor (bodyweight:number, height:number, sex:Sex) {
+        if (sex === "f")
             return 0.31223 - 0.006446 * bodyweight + 0.004466 * height
-        if (sex == "m")
+        if (sex === "m")
             return 0.31608 - 0.004821 * bodyweight + 0.004432 * height
+        else
+            return 1
     }
 
     // Calculates the Widmark Formular, given amount on pure alcohol in g,
     // bodyweight in kg and gender (f/m)
-    public static getWidmarkFormula (alc:number, bodyweight:number, height:number ,sex:string) {
+    public static getWidmarkFormula (alc:number, bodyweight:number, height:number, sex:Sex) {
         return alc / (bodyweight * this.getSeidlReductionFactor(bodyweight, height, sex)) 
     }
 
@@ -35,7 +39,7 @@ export class PromilleCalculator {
 
 
     // Combines all the functions above to get promille
-    public static howDrunkAmI (bodyweight:number, height:number, sex:string, time:number, alc:number) {
+    public static howDrunkAmI (bodyweight:number, height:number, sex:Sex, time:number, alc:number) {
         // Calculates Widkmark Formula 
         var widmark = this.getWidmarkFormula(alc, bodyweight, height, sex)
         // Value after applying resorbtionDeficit
@@ -43,7 +47,7 @@ export class PromilleCalculator {
         // Final result after hourlyDecline
         var result = this.hourlyDecline(afterdeficit, time)
 
-        console.log('You have an estimated promille count of:  ${result}');
+        console.log(`You have an estimated promille count of:  ${result}`);
         return result
     }
 }
