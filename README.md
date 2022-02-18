@@ -36,3 +36,6 @@ Test it yourself by running:
 ````
 deno run --allow-net "https://deno.land/x/promille_calculator@0.0.3/src/PromilleCalculator_test.spec.ts"
 ````
+
+
+### once again: this method is not reliable. Don't base your decisions on the results of this script.
