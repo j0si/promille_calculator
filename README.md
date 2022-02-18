@@ -13,7 +13,7 @@ This is a student project, to get to know the deployment process with deno. Plea
 - all you need is your:
   - weight in *kg*
   - height in *cm*
-  - your gender *m/f/d*
+  - your gender as string *m/f/d*
   - duration of drinking in *hours*
   - amount of pure alcohol consumed in *g*
 
