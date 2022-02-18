@@ -24,7 +24,7 @@ This is a student project, to get to know the deployment process with deno.
 You can run the **usage_example.ts** with this line: 
 
 ````
-deno run --allow-net "https://deno.land/x/promille_calculator@0.0.3/usage_example.ts"
+deno run --allow-net "https://deno.land/x/promille_calculator@0.0.2/usage_example.ts"
 ````
 
 
@@ -34,7 +34,7 @@ The module is covered by unit-test which can be found in *./src/PromilleCalculat
 Test it yourself by running:
 
 ````
-deno run --allow-net "https://deno.land/x/promille_calculator@0.0.3/src/PromilleCalculator_test.spec.ts"
+deno run --allow-net "https://deno.land/x/promille_calculator@0.0.2/src/PromilleCalculator_test.spec.ts"
 ````
 
 
